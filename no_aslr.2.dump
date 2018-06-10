@@ -1,0 +1,23 @@
+12471:   ./output/hello_x86 aaa
+0000000000400000      4K r-x-- hello_x86
+0000000000600000      4K r---- hello_x86
+0000000000601000      4K rw--- hello_x86
+0000000000602000    132K rw---   [ anon ]
+00007fffff030000   1792K r-x-- libc-2.23.so
+00007fffff1f0000     36K ----- libc-2.23.so
+00007fffff1f9000   2012K ----- libc-2.23.so
+00007fffff3f0000     16K r---- libc-2.23.so
+00007fffff3f4000      8K rw--- libc-2.23.so
+00007fffff3f6000     16K rw---   [ anon ]
+00007fffff400000    148K r-x-- ld-2.23.so
+00007fffff425000      4K r-x-- ld-2.23.so
+00007fffff625000      4K r---- ld-2.23.so
+00007fffff626000      4K rw--- ld-2.23.so
+00007fffff627000      4K rw---   [ anon ]
+00007fffff7b0000      4K rw---   [ anon ]
+00007fffff7c0000      4K rw---   [ anon ]
+00007fffff7d0000      4K rw---   [ anon ]
+00007fffff7e0000      8K rw---   [ anon ]
+00007fffff7ef000   8192K rw---   [ anon ]
+00007ffffffef000      4K r-x--   [ anon ]
+ total            12404K

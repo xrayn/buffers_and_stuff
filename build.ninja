@@ -1,0 +1,37 @@
+cflags= -g -msoft-float
+
+cheri_flags= -cheri=256 -mabi=purecap 
+
+cc=/home/ar/cheri/output/sdk/bin/mips4-unknown-freebsd-clang
+
+ccx86= clang
+
+rule cc_x86
+  command = $ccx86 -g $in -o $out
+
+rule cc_cheri
+  command = $cc $cflags $in -o $out
+
+rule cc_cheri_256_pure
+  command = $cc $cflags $in -o $out -cheri=256 -mabi=purecap
+
+rule cc_cheri_128_pure
+  command = $cc $cflags $in -o $out -cheri=128 -mabi=purecap
+
+rule cc_cheri_256
+  command = $cc $cflags $in -o $out -cheri=256
+
+rule cc_cheri_128
+  command = $cc $cflags $in -o $out -cheri=128
+
+
+
+build output/stack_x86: cc_x86 stack_variables/stack.c
+build output/hello_x86: cc_x86 stack_variables/stack3.c
+build output/heap_x86: cc_x86 heap_variables/heap.c
+
+build output/stackdop_x86: cc_x86 stack_variables/stack2.c
+build output/multi_x86: cc_x86 heap_variables/multi_dimensional_arrays.c
+
+#/home/ar/hello.c -msoft-float -o /tmp/hello256pure -cheri=256 -mabi=purecap
+
