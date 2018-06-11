@@ -37,47 +37,43 @@ The code we will use for our exploitation is as follows:
 Tasks: The code contains a buffer overflow vulnerability. The goal of this
 excercise is to exploit this vulnerability and use it to spawn a shell.
 
-1. Locate the buffer overflow vulnerability inside the code
+#. Locate the buffer overflow vulnerability inside the code
 
-2. Compile your code as follows:
+#. Compile your code as follows:
 
    ``gcc -g stack_variables/stack.c -z execstack -o output/stack_exec_stack``
 
-3. Disable ASLR as follows:
-   
-   ``./aslr_disable``
-
-4. Play around with the command line arguments and understand what happens
+#. Play around with the command line arguments and understand what happens
    inside the code
 
    ``./output/stack_exec_stack parameter``
 
-5. Answer the following questions:
+#. Answer the following questions:
    
    #. How many Bytes do you need to overflow until you receive a segmentation
       fault?
    
    #. How many Bytes are available in your buffer?
 
-6. Got to https://www.exploit-db.com/exploits/42179/ or look at the file
+#. Got to https://www.exploit-db.com/exploits/42179/ or look at the file
    ``exploit_shellcode.c``
 
-7. Locate the shellcode and find a way how to inject this code into your
+#. Locate the shellcode and find a way how to inject this code into your
    buffers.
 
    - E.g. ``./output/stack_exec_stack $(python -c 'print "\x50..."')``
 
-8. Figure out the padding you will need between your buffer and the return
+#. Figure out the padding you will need between your buffer and the return
    address
 
-9. Figure out the correct address that points to your shellcode and overwrite
+#. Figure out the correct address that points to your shellcode and overwrite
    the areturn address accordingly. (Note, X86_64 uses little endian byte
    order!)
 
-10. Put everything together in a single command line argument and execute your
+#. Put everything together in a single command line argument and execute your
     exploit.
 
-11. There is a precompiled version of this program available.
+#. There is a precompiled version of this program available.
     ``output/stack_exec_root``. Use what you learnt and exploit this program instead.
 
     - Once you have a shell (this time this is a root shell) 
