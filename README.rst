@@ -48,6 +48,8 @@ excercise is to exploit this vulnerability and use it to spawn a shell.
 4. Play around with the command line arguments and understand what happens
    inside the code
 
+   - `./output/stack_exec_stack parameter`
+
 5. Answer the following questions:
    
    #. How many Bytes do you need to overflow until you receive a segmentation
@@ -61,7 +63,7 @@ excercise is to exploit this vulnerability and use it to spawn a shell.
 7. Locate the shellcode and find a way how to inject this code into your
    buffers.
 
-   - E.g. $(python -c 'print "\x50"')
+   - E.g. `./output/stack_exec_stack $(python -c 'print "\x50..."')`
 
 8. Figure out the padding you will need between your buffer and the return
    address
