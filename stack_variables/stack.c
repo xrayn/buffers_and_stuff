@@ -2,11 +2,11 @@
 #include <string.h>
 
 int main(int argc, char **argv) {
-  char buffer[10];
-  char buffer2[10];
+  char buffer[16];
+  char buffer2[16];
 
-  buffer[9]='\0';
-  buffer2[9]='\0';
+  buffer[15]='\0';
+  buffer2[15]='\0';
 
   printf("Hello Buffers\n\n");
 
@@ -18,7 +18,7 @@ int main(int argc, char **argv) {
   printf("Buffer : @%p\n", &buffer);
 
   memcpy(buffer2,argv[1], strlen(argv[1]));
-
+  
   printf("Buffer2: @%p [%s]\n", &buffer2, buffer2);
   printf("Buffer : @%p [%s]\n", &buffer, buffer);
 
