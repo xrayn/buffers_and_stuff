@@ -40,15 +40,17 @@ excercise is to exploit this vulnerability and use it to spawn a shell.
 1. Locate the buffer overflow vulnerability inside the code
 
 2. Compile your code as follows:
-   `gcc -g stack_variables/stack.c -z execstack -o output/stack_exec_stack`
+
+   ``gcc -g stack_variables/stack.c -z execstack -o output/stack_exec_stack``
 
 3. Disable ASLR as follows:
-   `./aslr_disable`
+   
+   ``./aslr_disable``
 
 4. Play around with the command line arguments and understand what happens
    inside the code
 
-   - `./output/stack_exec_stack parameter`
+   ``./output/stack_exec_stack parameter``
 
 5. Answer the following questions:
    
@@ -58,12 +60,12 @@ excercise is to exploit this vulnerability and use it to spawn a shell.
    #. How many Bytes are available in your buffer?
 
 6. Got to https://www.exploit-db.com/exploits/42179/ or look at the file
-   exploit_shellcode.c
+   ``exploit_shellcode.c``
 
 7. Locate the shellcode and find a way how to inject this code into your
    buffers.
 
-   - E.g. `./output/stack_exec_stack $(python -c 'print "\x50..."')`
+   - E.g. ``./output/stack_exec_stack $(python -c 'print "\x50..."')``
 
 8. Figure out the padding you will need between your buffer and the return
    address
@@ -76,10 +78,10 @@ excercise is to exploit this vulnerability and use it to spawn a shell.
     exploit.
 
 11. There is a precompiled version of this program available.
-    `stack_exec_root`. use what you learnt and use this program to exploit it.
+    ``output/stack_exec_root``. Use what you learnt and exploit this program instead.
 
     - Once you have a shell (this time this is a root shell) 
-      read the contents of the file `secret` to get the password for the root account.
+      read the contents of the file ``secret`` to get the password for the root account.
 
 
 
